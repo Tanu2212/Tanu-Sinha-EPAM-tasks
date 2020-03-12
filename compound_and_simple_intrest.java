@@ -1,5 +1,6 @@
 package EPAM.EPAMTASK4;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class compound_and_simple_intrest {
 
 	
@@ -18,7 +19,8 @@ public class compound_and_simple_intrest {
 }
 class client
 {
-	public void main(String[] args) {
+	private static final Logger LOGGER=LogManager.getLogger();
+	public static void main(String args[]) {
 		// TODO Auto-generated method stub
 		compound_and_simple_intrest c_s=new compound_and_simple_intrest();
 		double amount=1000;
@@ -27,5 +29,7 @@ class client
 		double com,sim;
 		com=c_s.compound_intrest(amount,time,rate);
 		sim=c_s.simple_intrest(amount,time,rate);
+		LOGGER.error(sim);
+		LOGGER.error(com);
 	}
 }

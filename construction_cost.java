@@ -2,6 +2,9 @@ package EPAM.EPAMTASK4;
 
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class construction_cost {
 
 	public double construction(double area,int i)
@@ -14,17 +17,19 @@ public class construction_cost {
 		return cost;
 	}
 }
-class client{
+class server{
+	private static final Logger LOGGER=LogManager.getLogger();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		construction_cost cs=new construction_cost();
 		//Didn't used "println"
-		 System.out.printf("Enter 1:Standard Material 2:Above Standard Material 3:High Standard Material 4:High Standard Material and Fully Ay=utomated");
+		 LOGGER.info("Enter 1:Standard Material 2:Above Standard Material 3:High Standard Material 4:High Standard Material and Fully Ay=utomated");
 		 int i=sc.nextInt();
 		 double area=20;
 		 double cost;
 		cost=cs.construction(area,i);
+		LOGGER.info(cost);
 	}
 
 }
