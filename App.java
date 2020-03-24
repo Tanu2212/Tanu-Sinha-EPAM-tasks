@@ -1,4 +1,4 @@
-package EPAM.EPAMTASK4;
+package EPAM.juint;
 
 /**
  * Hello world!
