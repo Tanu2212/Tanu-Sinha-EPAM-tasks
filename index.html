@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Registration Page</title>
+
+    <!-- BootStrap CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!-- Custom styles  -->
+    <link href="index.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <form class="my-form needs-validation" novalidate>
+
+      <div class="text-center mb-4">
+        <h1 class="mb-3 font-weight-normal"><b>Register </b>here</h1>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="inputName" class="form-control" placeholder="Name" minlength="2" required autofocus autocomplete="off">
+        <label for="inputEmail">Name</label>
+        <div class="valid-feedback">
+          <b>Looks Good!</b>
+        </div>
+        <div class="invalid-feedback">
+          <b>Name should have atleast two characters.</b>
+        </div>
+      </div>
+
+      <div class="form-label-group">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="off">
+        <label for="inputEmail">Email address</label>
+        <div class="valid-feedback">
+          <b>Looks Good!</b>
+        </div>
+        <div class="invalid-feedback">
+          <b>Please enter a valid email ID.</b>
+        </div>
+      </div>
+
+      <div class="form-label-group">
+        <input type="tel" pattern="[0-9]{10}" id="inputNum" class="form-control" placeholder="Contact No." required autofocus autocomplete="off">
+        <label for="inputEmail">Phone No.</label>
+        <div class="valid-feedback">
+          <b>Looks Good!</b>
+        </div>
+        <div class="invalid-feedback">
+          <b>Phone no. should have 10 digits only.</b>
+        </div>
+      </div>
+
+      <div class="form-label-group">
+        <input type="date" id="inputDOB" class="form-control" placeholder="Date of Birth" required autofocus>
+        <label for="inputEmail">Date of Birth</label>
+        <div class="valid-feedback">
+          <b>Looks Good!</b>
+        </div>
+        <div class="invalid-feedback">
+          <b>Please enter a valid DOB.</b>
+        </div>
+      </div>
+
+      <div class="form-label-group">
+        <input type="password" id="inputPassword" class="form-control" minlength="5" placeholder="Password" required>
+        <label for="inputPassword">Set Password</label>
+        <div class="valid-feedback">
+          <b>Looks Good!</b>
+        </div>
+        <div class="invalid-feedback">
+          <b>Password should have atleast five characters.</b>
+        </div>
+      </div>
+
+      <div class="my-btn">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </div>
+    </form>
+
+    <script>
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+  </body>
+</html>
